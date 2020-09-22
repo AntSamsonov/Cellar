@@ -16,7 +16,7 @@ public class Cellar {
                 for (int i = 0; i < cellar.size(); i++) {
                     if (cellar.get(i).contains(choice)) {
                         cellar.remove(i);
-                        System.out.println("Вы выбрали " + choice);
+                        System.out.println("Вы выбрали " + choice + ". Банка с взята из погреба!");
                     }
                 }
             } else {
@@ -56,13 +56,14 @@ public class Cellar {
         //Метод заполняет погреб банками со случайным содержимым из списка.
 
     public void getRandomValue(int number){
-        List<String> randomValue = Arrays.asList("Огурец", "Картофель", "Томат", "Морковь", "Чеснок", "Перец", "Баклажан", "Лук", "Редис", "Капуста");
+        List<String> randomValue = Arrays.asList("огурец", "картофель", "томат", "морковь", "чеснок", "перец",
+                "баклажан", "лук", "редис", "капуста");
         List<String> result = new ArrayList<String>();
 
         if (number >= 10){
             cellar = randomValue;
         } else {
-            for (int i = 0; i <= number; i++) {
+            for (int i = 1; i <= number; i++) {
                 result.add(randomValue.get(i));
             }
             cellar = result;
