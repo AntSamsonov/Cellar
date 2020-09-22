@@ -4,25 +4,26 @@ import java.util.List;
 
 import static javax.swing.UIManager.get;
 
-public class Cellar {
+public class Cellar extends Throwable{
     List<String> cellar = new ArrayList<String>();
 
     //Метод кладёт банку в погреб, принимает содержимое банки как аргумент.
 
-    public void takeBank(String choice) throws Exception {
+    public void takeBank(String choice) {
         try {
             int randomCrash = (int) (Math.random() * 100);
             if (randomCrash > 2) {
                 for (int i = 0; i < cellar.size(); i++) {
-                    if (cellar.get(i).contains(choice)) {
+                    if (cellar.get(i).equals(choice)) {
                         cellar.remove(i);
-                        System.out.println("Вы выбрали " + choice + ". Банка с взята из погреба!");
+                        System.out.println("Вы выбрали " + choice + ". Банка взята из погреба!");
                     }
                 }
             } else {
-                throw new Exception();
+                cellar.remove(choice);
+                int exit = 1 / 0;
             }
-        } catch (Exception e) {
+        } catch (ArithmeticException e) {
             System.out.println("При попытке взять банку, она разбилась");
         }
     }
