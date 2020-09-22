@@ -56,7 +56,7 @@ public class Cellar {
         //Метод заполняет погреб банками со случайным содержимым из списка.
 
     public void getRandomValue(int number){
-        List<String> randomValue = Arrays.asList("Cucumber", "Potato", "Tomato", "Carrot", "Cabbage", "Paper", "Eggplant", "Onion", "Radish", "Garlic");
+        List<String> randomValue = Arrays.asList("Огурец", "Картофель", "Томат", "Морковь", "Чеснок", "Перец", "Баклажан", "Лук", "Редис", "Капуста");
         List<String> result = new ArrayList<String>();
 
         if (number >= 10){
